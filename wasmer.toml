@@ -1,0 +1,18 @@
+[package]
+name = "nexusvibe-gateway"
+version = "1.0.0"
+description = "NexusVibe Edge Gateway for Wasmer WinterJS"
+license = "Apache-2.0"
+
+[[modules]]
+name = "gateway"
+source = "gateway.js"
+abi = "wasi"
+
+[[commands]]
+name = "run"
+module = "gateway"
+runner = "https://webc.org/wasmer/winterjs"
+
+[fs]
+"/public" = "public"
